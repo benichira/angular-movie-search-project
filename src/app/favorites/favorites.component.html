@@ -1,1 +1,11 @@
-<p>favorites works!</p>
+<div *ngIf="favoriteMovies" class='recommendation-container'>
+  <div *ngFor="let movie of favoriteMovies" class='movie-card'>
+    <div class='img-cont'>
+      <img routerLink="/movies/{{movie.id}}" alt="movie poster"
+           src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}"/>
+    </div>
+    <h3>{{movie.original_title}}</h3>
+    <button (click)="removeFromFavorites(movie.id)">Remove</button>
+  </div>
+</div>
+<h1 *ngIf="favoriteMovies===undefined || favoriteMovies.length===0">You have no favorites</h1>

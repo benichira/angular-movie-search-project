@@ -1,0 +1,28 @@
+
+.movie-card img {
+  object-fit: cover;
+  height: 400px;
+  justify-self: center;
+  transition: 0.25s ease-in-out;
+  /*box-shadow: 0px 5px 10px 0px white;*/
+  /*box-shadow: 1px 1px 1px 2px white;*/
+}
+
+.movie-card img:hover {
+  /*height: 405px;*/
+  box-shadow: 0px 5px 10px 5px rgba(255, 255, 255, 0.24);
+  /*box-shadow: 1px 1px 1px 4px white;*/
+}
+
+.movie-card {
+  height: fit-content;
+  transition: 0.25s ease-in-out;
+  text-align: center;
+  /*overflow: hidden;*/
+}
+
+.recommendation-container {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}

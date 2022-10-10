@@ -1,1 +1,11 @@
-<p>shows works!</p>
+<div class="shows-wrapper">
+  <h2>Find TV shows</h2>
+  <div class='input-container'>
+    <input type='text' placeholder="Search..." [(ngModel)]="show"/>
+    <button type="button" (click)="searchTVShow()">
+      Search
+    </button>
+  </div>
+  <h1 *ngIf="!foundShows">Show not found</h1>
+  <app-show-results *ngIf="foundShows===true" [shows]="showResults"></app-show-results>
+</div>

@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, Input, OnInit} from '@angular/core';
+import {IMovie} from "../@types/Interfaces";
 
 @Component({
   selector: 'app-movie-results',
   templateUrl: './movie-results.component.html',
-  styleUrls: ['./movie-results.component.css']
+  styleUrls: ['./movie-results.component.scss']
 })
+@Injectable()
 export class MovieResultsComponent implements OnInit {
 
-  constructor() { }
+  @Input() movieResults?: IMovie[];
 
   ngOnInit(): void {
+    // console.log("movieResults--->", this.movieResults)
   }
-
 }

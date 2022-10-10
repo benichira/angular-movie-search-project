@@ -1,1 +1,13 @@
-<p>movie-details works!</p>
+<div *ngIf="movie" class='movie-container'>
+  <div class='movie-content'>
+    <div><img src='http://image.tmdb.org/t/p/w500/{{this.movie.poster_path}}'/>
+    </div>
+    <div class='movie-description'>
+      <h1>{{movie.original_title}}</h1>
+      <p>Description</p>
+      <h2>{{movie.overview}}</h2>
+      <p>Release date {{movie.release_date}}</p>
+    </div>
+  </div>
+  <app-related-movies (relatedMoviesSent)="receiveMovies($event)" [movieId]="movie.id"></app-related-movies>
+</div>

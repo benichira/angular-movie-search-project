@@ -1,1 +1,9 @@
-<p>related-movies works!</p>
+<div *ngIf="relatedMovies" class='related-movies-container'>
+  <div *ngFor="let movie of relatedMovies">
+
+    <div (click)="sendMovies()">
+      <img routerLink="/movies/{{movie.id}}" src='http://image.tmdb.org/t/p/w500/{{movie.poster_path}}'/>
+      <p>{{movie.name}}</p>
+    </div>
+  </div>
+</div>

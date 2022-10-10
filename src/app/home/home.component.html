@@ -1,1 +1,13 @@
-<p>home works!</p>
+<div class='home-container'>
+  <h1>Trending</h1>
+  <div class='recommendation-container'>
+    <div *ngFor="let movie of movies" class='movie-card'>
+      <div class='img-cont'>
+        <img routerLink="/movies/{{movie.id}}" alt="movie poster"
+             src="http://image.tmdb.org/t/p/w500/{{movie.poster_path}}"/>
+      </div>
+      <!--      <h3>{{movie.name}}</h3>-->
+      <button (click)="addToFavorites(movie.id,$event)"> Add to favorites</button>
+    </div>
+  </div>
+</div>

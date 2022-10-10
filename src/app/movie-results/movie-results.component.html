@@ -1,1 +1,10 @@
-<p>movie-results works!</p>
+<div class='search-results'>
+  <div *ngFor="let movie of movieResults">
+    <div routerLink="/movies/{{movie.id}}" class='movie-results-card'>
+      <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'/>
+      <h3>
+        {{movie.name}}
+      </h3>
+    </div>
+  </div>
+</div>

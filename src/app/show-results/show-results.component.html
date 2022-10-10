@@ -1,1 +1,10 @@
-<p>show-results works!</p>
+<div class='search-results'>
+  <div *ngFor="let show of shows">
+    <div routerLink="/shows/{{show.id}}" class='show-results-card'>
+      <img src='http://image.tmdb.org/t/p/w500/{{show.poster_path}}'/>
+      <h3>
+        {{show.name}}
+      </h3>
+    </div>
+  </div>
+</div>
