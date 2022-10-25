@@ -1,11 +1,12 @@
-<div class='movies-wrapper'>
+<div class="movies-wrapper">
   <h2>Find movies</h2>
-  <div class='input-container'>
-    <input type='text' placeholder="Search..." [(ngModel)]="movie"/>
-    <button type="button" (click)="onSubmit()">
-      Search
-    </button>
+  <div class="input-container">
+    <input type="text" placeholder="Search..." [(ngModel)]="movie" />
+    <button type="button" (click)="onSubmit($event)">Search</button>
   </div>
   <h1 *ngIf="!foundMovies">Movie not found</h1>
-  <app-movie-results *ngIf="foundMovies===true" [movieResults]="movies"></app-movie-results>
+  <app-movie-results
+    *ngIf="foundMovies === true"
+    [movieResults]="movies"
+  ></app-movie-results>
 </div>

@@ -1,4 +1,4 @@
-<div *ngIf="favoriteMovies" class='recommendation-container'>
+<!-- <div *ngIf="favoriteMovies" class='recommendation-container'>
   <div *ngFor="let movie of favoriteMovies" class='movie-card'>
     <div class='img-cont'>
       <img routerLink="/movies/{{movie.id}}" alt="movie poster"
@@ -8,4 +8,6 @@
     <button (click)="removeFromFavorites(movie.id)">Remove</button>
   </div>
 </div>
-<h1 *ngIf="favoriteMovies===undefined || favoriteMovies.length===0">You have no favorites</h1>
+<h1 *ngIf="favoriteMovies===undefined || favoriteMovies.length===0">You have no favorites</h1> -->
+
+<p-menu [model]="items"></p-menu>

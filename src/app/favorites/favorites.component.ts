@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {FavoritesService} from "./favorites.service";
-import {IMovieDetails} from "../@types/Interfaces";
+import { Component, OnInit } from '@angular/core';
+import { FavoritesService } from './favorites.service';
+import { IMovieDetails } from '../@types/Interfaces';
+import { MenuItem } from 'primeng/api';
+import { MegaMenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-favorites',
@@ -11,21 +13,29 @@ import {IMovieDetails} from "../@types/Interfaces";
   ]
 })
 export class FavoritesComponent implements OnInit {
+  favoriteMovies?: IMovieDetails[];
+  public items: MenuItem[] = [];
 
-  favoriteMovies?: IMovieDetails[]
+  constructor(public favorites: FavoritesService) {}
 
-  constructor(public favorites: FavoritesService) {
-  }
+  // this.favoriteMovies = this.favorites.favoriteMovies;
+  // console.log(this.favorites.favoriteMovies);
 
-
-  ngOnInit(): void {
-    this.favoriteMovies = this.favorites.favoriteMovies
-    console.log(this.favorites.favoriteMovies)
+  ngOnInit() {
+    this.items = [
+      {
+        label: 'File',
+        items: [{ label: 'New', icon: 'pi pi-plus' }, { label: 'Open', icon: 'pi pi-download' }]
+      },
+      {
+        label: 'Edit',
+        items: [{ label: 'Undo', icon: 'pi pi-refresh' }, { label: 'Redo', icon: 'pi pi-repeat' }]
+      }
+    ];
   }
 
   removeFromFavorites(id: number) {
     this.favoriteMovies = this.favorites.remove(id);
-    return this.favoriteMovies
+    return this.favoriteMovies;
   }
-
 }
